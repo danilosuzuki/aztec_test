@@ -1,19 +1,20 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ShoppingListController;
+use App\Http\Controllers\ShoppingListHandlerController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
+//CRUD REST
+Route::apiResources([
+    'product' => ProductController::class,
+    'shopping_list'=> ShoppingListController::class
+]);
 
-Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
-    return $request->user();
-});
+//Shopping List clone
+Route::post('shopping_list/clone_list/{id}',[ShoppingListController::class,'cloneShoppingList']);
+
+//Shopping List handler
+Route::post('list_handle/{id}/add_product',[ShoppingListHandlerController::class,'addProduct']);
+Route::put('list_handle/{id}/update_product',[ShoppingListHandlerController::class,'updateProduct']);
+Route::delete('list_handle/{id}/delete_product',[ShoppingListHandlerController::class,'deleteProduct']);

@@ -1,0 +1,386 @@
+{
+	"info": {
+		"_postman_id": "c5c30d91-0816-4341-8fd1-132c7db78f27",
+		"name": "Aztec",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28455719"
+	},
+	"item": [
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "CRUD",
+					"item": [
+						{
+							"name": "CreateProduct",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"product test {{productID}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/product",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"product"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetProduct",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/product/{{productID}}",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"product",
+										"{{productID}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateProduct",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"product test updated {{productID}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/product/{{productID}}",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"product",
+										"{{productID}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteProduct",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/product/{{productID}}",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"product",
+										"{{productID}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AllProduct",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/product",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"product"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Shopping List",
+			"item": [
+				{
+					"name": "CRUD & Clone",
+					"item": [
+						{
+							"name": "CreateShoppingList",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"shopping list test {{shoppingListID}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/shopping_list",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"shopping_list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetShoppingList",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/shopping_list/:id",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"shopping_list",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateShoppingList",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"shopping list test updated {{shoppingListID}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/shopping_list/{{shoppingListID}}",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"shopping_list",
+										"{{shoppingListID}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteShoppingList",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/shopping_list/{{shoppingListID}}",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"shopping_list",
+										"{{shoppingListID}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AllShoppingList",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/shopping_list",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"shopping_list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CloneShoppingList",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/shopping_list/clone_list/{{shoppingListID}}",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"shopping_list",
+										"clone_list",
+										"{{shoppingListID}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "ShoppingListHandler",
+			"item": [
+				{
+					"name": "Manage Products",
+					"item": [
+						{
+							"name": "AddOneProductToShoppingList",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\" : {{productID}},\r\n    \"quantity\": {{quantity}}\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/list_handle/{{shoppingListID}}/add_product",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"list_handle",
+										"{{shoppingListID}}",
+										"add_product"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateProductToShoppingList",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\" : {{productID}},\r\n    \"quantity\": {{quantity}}\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/list_handle/{{shoppingListID}}/update_product",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"list_handle",
+										"{{shoppingListID}}",
+										"update_product"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteProductFromShoppingList",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\" : {{productID}}\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/list_handle/{{shoppingListID}}/delete_product",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"list_handle",
+										"{{shoppingListID}}",
+										"delete_product"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
