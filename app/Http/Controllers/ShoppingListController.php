@@ -64,7 +64,6 @@ class ShoppingListController extends Controller
         } catch (\Throwable $th) {
             return response()->json($th, Response::HTTP_BAD_REQUEST);
         }
-        
     }
 
     public function cloneShoppingList(int $id)

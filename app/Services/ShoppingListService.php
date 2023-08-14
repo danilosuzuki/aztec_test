@@ -64,14 +64,19 @@ class ShoppingListService implements ShoppingListServiceInterface
 
     public function cloneShoppingList(int $id)
     {
-        $replicated = $this->shoppingListRepository->clone($id);
-        
-        $products = $this->shoppingListRepository->show($id)->products()->get();
-        foreach ($products as $key => $value) {
-            $quantity = ['quantity' => $value->pivot->quantity];
-            $this->shoppingListRepository->cloneProduct($value->id, $quantity, $replicated->id);
+        try {
+            $replicated = $this->shoppingListRepository->clone($id);
+            
+            $products = $this->shoppingListRepository->show($id)->products()->get();
+            foreach ($products as $key => $value) {
+                $quantity = ['quantity' => $value->pivot->quantity];
+                $this->shoppingListRepository->cloneProduct($value->id, $quantity, $replicated->id);
+            }
+            
+            return $replicated->load('products');
+        } catch (\Throwable $th) {
+            return response()->json($th, Response::HTTP_BAD_REQUEST);
         }
-        
-        return $replicated->load('products');
+
     }
 }

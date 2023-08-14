@@ -31,19 +31,26 @@ class ShoppingListHandlerService implements ShoppingListHandlerServiceInterface
 
     public function updateProduct(array $data, int $id)
     {
-        $shoppingList = $this->shoppingListHandlerRepository->getModelObject($id);
-        $product = $this->shoppingListHandlerRepository->getProduct()->show($data['id']);
-        $quantity = ['quantity' => $data['quantity']];
-        $this->shoppingListHandlerRepository->updateProduct($product->id, $quantity, $id);
-
-        return $shoppingList->load('products');
+        try {
+            $shoppingList = $this->shoppingListHandlerRepository->getModelObject($id);
+            $product = $this->shoppingListHandlerRepository->getProduct()->show($data['id']);
+            $quantity = ['quantity' => $data['quantity']];
+            $this->shoppingListHandlerRepository->updateProduct($product->id, $quantity, $id);
+            return $shoppingList->load('products');
+        } catch (\Throwable $th) {
+            return response()->json($th, Response::HTTP_BAD_REQUEST);
+        }
     }
 
     public function deleteProduct(array $data, int $id)
     {
-        $shoppingList = $this->shoppingListHandlerRepository->getModelObject($id);
-        $product = $this->shoppingListHandlerRepository->getProduct()->show($data['id']);
-        $this->shoppingListHandlerRepository->deleteProduct(['id' => $product->id], $id);
-        return $shoppingList->load('products');
+        try {
+            $shoppingList = $this->shoppingListHandlerRepository->getModelObject($id);
+            $product = $this->shoppingListHandlerRepository->getProduct()->show($data['id']);
+            $this->shoppingListHandlerRepository->deleteProduct(['id' => $product->id], $id);
+            return $shoppingList->load('products');
+        } catch (\Throwable $th) {
+            return response()->json($th, Response::HTTP_BAD_REQUEST);
+        }
     }
 }
