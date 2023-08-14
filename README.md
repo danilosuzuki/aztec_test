@@ -1,66 +1,81 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## English
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+For Portuguese documentation, scroll down.
 
-## About Laravel
+## The challenge
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+The challenge is to create a shopping list API in PHP.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Features:
+- Create a shopping list.
+- Add and remove products to the list.
+- Get data from a list.
+- Increase and decrease quantities of a product.
+- Duplicate a list.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Entities:
+- Shopping List: A list with title and product listing.
+- Product: A product with name and quantity of items in the list.
 
-## Learning Laravel
+What will be evaluated:
+- Good use of object orientation
+- Design Patterns
+- Application architecture
+- Installation documentation
+- Bonus: Postman collection with endpoint calls
+- Bonus: Optimization of the relationship between entities
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Rules:
+- The use of any framework or microframework is free. In addition to any library.
+- There is no need to build an infrastructure, the API can be served by PHP's built-in web server
+- It is not necessary to deliver all the functionalities. It is important to understand the time available to carry out the challenge and that we can evaluate the points that were requested.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Installation
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- Clone the [project](https://github.com/danilosuzuki/aztec_test.git) into a directory in you computer.
+- Make sure you have composer installed on your machine. If you do not have it, download [here](https://getcomposer.org/download/). Then access the folder and run the command `composer install`.
+- Rename the file `.env.example` to `.env`. Then create a database according to `.env` and run the command `php artisan migrate`. Optionally you can run the command `php artisan migrate:fresh --seed` to create and seed the database.
+- Generate the Application Key with `php artisan generate:key`.
+- Tests were generated for each feature with Pest, and you can run them using `php artisan test`.
+- Now you can serve your appliction with `php artisan serve`
+- To use the Postman to test, you can import the `Aztec.postman_collection.json` into your application (I used global varibables to use the tests: "productID", "shoppingListID" and "quantity", make sure to have those or change "{ {variable} }" to the value desired).
 
-## Laravel Sponsors
+## Português
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## O desafio 
 
-### Premium Partners
+O desafio é criar uma API de lista de compras em PHP.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+Características:
+- Crie uma lista de compras.
+- Adicionar e remover produtos da lista.
+- Obter dados de uma lista.
+- Aumentar e diminuir quantidades de um produto.
+- Duplicar uma lista.
 
-## Contributing
+Entidades:
+- Lista de Compras: Uma lista com título e listagem de produtos.
+- Produto: Um produto com nome e quantidade de itens na lista.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+O que será avaliado:
+- Bom uso da orientação a objetos
+- Padrões de design
+- Arquitetura do aplicativo
+- Documentação de instalação
+- Bônus: coleta de carteiro com chamadas de endpoint
+- Bônus: Otimização do relacionamento entre entidades
 
-## Code of Conduct
+Regras:
+- O uso de qualquer framework ou microframework é gratuito. Além de qualquer biblioteca.
+- Não há necessidade de construir uma infraestrutura, a API pode ser atendida pelo servidor web integrado do PHP
+- Não é necessário entregar todas as funcionalidades. É importante entender o tempo disponível para realizar o desafio e que possamos avaliar os pontos que foram solicitados.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Instalação
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- Clone o [projeto](https://github.com/danilosuzuki/aztec_test.git) em um diretório em seu computador.
+- Certifique-se de ter o composer instalado em sua máquina. Caso não tenha, baixe [aqui](https://getcomposer.org/download/). Em seguida, acesse a pasta e execute o comando `composer install`.
+- Renomeie o arquivo `.env.example` para `.env`. Em seguida, crie um banco de dados de acordo com `.env` e execute o comando `php crafts migration`. Opcionalmente, você pode executar o comando `php artisan migration:fresh --seed` para criar e propagar o banco de dados.
+- Gere a chave do aplicativo com `php artisan generate:key`.
+- Testes foram gerados para cada recurso com o Pest, e você pode executá-los usando `php artisan test`.
+- Agora você pode servir sua aplicação com `php artisan serve`
+- Para usar o Postman para testar, você pode importar o `Aztec.postman_collection.json` para o seu aplicativo (eu usei variáveis ​​globais para usar os testes: "productID", "shoppingListID" e "quantity", certifique-se de ter esses ou altere "{ {variavel} }" para o valor desejado).
